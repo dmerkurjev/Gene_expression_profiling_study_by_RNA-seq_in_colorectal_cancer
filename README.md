@@ -1,7 +1,6 @@
 Senescence RNA-seq — Preprocessing & Analysis
 
-This repository contains an end-to-end workflow for RNA-seq analysis of early passage and senescent BJ fibroblasts in the absence or continued presence of doxycycline (20nm).
-It includes two main components:
+This repository contains an end-to-end workflow for RNA-seq analysis of 54 samples (normal colon, primary CRC, and liver metastasis) were generated from 18 CRC patients. 
 
 Preprocessing (Clean.sh)
 Downloads SRA runs, builds 4 sample FASTQs, performs QC, alignment, and outputs gene transcription level.
@@ -11,41 +10,32 @@ Performs differential expression analysis using edgeR.
 
 Data
 
-SRA BioProject: PRJNA610861 
-BJ fibroblasts transduced with doxycycline inducible empty vector control retroviruses were grown in the absence
-or continued presence of doxycycline (20nm), and young-quiescent or senescent cells were collected for RNA-seq. 
-Senescent and young doxycycline treated samples were compared for changes in genes expression, and senescent and 
-young doxycycline untreated samples were compared separately.
+SRA BioProject: PRJNA218851
+The objective of this study is to identify a prognostic signature in colorectal cancer (CRC) patients with diverse progression and heterogeneity of CRCs. We generated RNA-seq data of 54 samples (normal colon, primary CRC, and liver metastasis) from 18 CRC patients and, from the RNA-seq data, identified significant genes associated with aggressiveness of CRC. 
 
 Sample 1: GSM1228184 (SRX347887)
-cell line: BJ Fibroblast
-Stage: Young - Quiescent
-treatment: Doxycycline Minus
+tissue: primary colorectal cancer
+ajcc stage: Stage IV
 
 Sample 2: GSM1228185 (SRX347888)
-cell line: BJ Fibroblast
-Stage: Young - Quiescent
-treatment: Doxycycline Plus
+tissue: primary colorectal cancer
+ajcc stage: Stage IV
 
 Sample 3: GSM1228202 (SRX347905)
-cell line: BJ Fibroblast
-Stage: Senescent
-treatment: Doxycycline Minus
+tissue: normal-looking surrounding colonic epithelium
+ajcc stage: Stage IV
 
 Sample 4: GSM1228203 (SRX347906)
-cell line: BJ Fibroblast
-Stage: Senescent
-treatment: Doxycycline Plus
+tissue: normal-looking surrounding colonic epithelium
+ajcc stage: Stage IV
 
 Sample 5: GSM1228220 (SRX347923)
-cell line: BJ Fibroblast
-Stage: Senescent
-treatment: Doxycycline Minus
+tissue: metastatic colorectal cancer to the liver
+ajcc stage: Stage IV
 
 Sample 6: GSM1228221 (SRX347906)
-cell line: BJ Fibroblast
-Stage: Senescent
-treatment: Doxycycline Plus
+tissue: metastatic colorectal cancer to the liver
+ajcc stage: Stage IV
 
 Reference files:
 
