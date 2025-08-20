@@ -17,22 +17,32 @@ or continued presence of doxycycline (20nm), and young-quiescent or senescent ce
 Senescent and young doxycycline treated samples were compared for changes in genes expression, and senescent and 
 young doxycycline untreated samples were compared separately.
 
-Sample 1: GSM4395596 (SRX7865899)
+Sample 1: GSM1228184 (SRX347887)
 cell line: BJ Fibroblast
 Stage: Young - Quiescent
 treatment: Doxycycline Minus
 
-Sample 2: GSM4395597 (SRX7865900)
+Sample 2: GSM1228185 (SRX347888)
 cell line: BJ Fibroblast
 Stage: Young - Quiescent
 treatment: Doxycycline Plus
 
-Sample 3: GSM4395598 (SRX7865901)
+Sample 3: GSM1228202 (SRX347905)
 cell line: BJ Fibroblast
 Stage: Senescent
 treatment: Doxycycline Minus
 
-Sample 4: GSM4395599 (SRX7865902)
+Sample 4: GSM1228203 (SRX347906)
+cell line: BJ Fibroblast
+Stage: Senescent
+treatment: Doxycycline Plus
+
+Sample 5: GSM1228220 (SRX347923)
+cell line: BJ Fibroblast
+Stage: Senescent
+treatment: Doxycycline Minus
+
+Sample 6: GSM1228221 (SRX347906)
 cell line: BJ Fibroblast
 Stage: Senescent
 treatment: Doxycycline Plus
