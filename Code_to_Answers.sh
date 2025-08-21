@@ -4,12 +4,12 @@ Answers to questions path, please run full script succesfully first to run those
 # ---- Answers for q1..q5 ----
 # Requires objects 'counts', 'dds', and 'res' created above
 
-# q1: lanes concatenated for young -dox
+# q1: lanes concatenated for colon rep1
 # If you later generate a manifest upstream, read it here instead of hardcoding
-sample_lanes <- c(ym = 1L, yp = 1L, sm = 1L, sp = 1L)
-ans_q1 <- unname(sample_lanes["ym"])
+sample_lanes <- c(colon1 = 1L, colon2 = 1L, normal1 = 1L, normal2 = 1L, metastatic1 = 1L, metastatic2 =1L)
+ans_q1 <- unname(sample_lanes["colon1"])
 
-# q2: library size for senescent -dox
+# q2: library size for normal 1?
 libsize <- colSums(counts)
 ans_q2 <- unname(libsize["sm"])
 
@@ -20,12 +20,12 @@ ans_q3 <- sum(counts[, "ym"] > 0)
 res_df <- as.data.frame(res)
 ans_q4 <- sum(res_df$log2FoldChange >= 1 & res_df$padj < 0.01, na.rm = TRUE)
 
-# q5: gene ranked 3th by log2 fold change among most upregulated
+# q5: gene ranked 2nd by log2 fold change among most upregulated
 res_df$SYMBOL <- rownames(res_df)
 up_rank <- res_df %>%
   dplyr::filter(!is.na(log2FoldChange) & log2FoldChange > 0) %>%
   dplyr::arrange(dplyr::desc(log2FoldChange), padj, pvalue)
-ans_q5 <- if (nrow(up_rank) >= 3) up_rank$SYMBOL[3] else NA_character_
+ans_q5 <- if (nrow(up_rank) >= 3) up_rank$SYMBOL[2] else NA_character_
 
 answers <- tibble::tibble(
   id = c("q1","q2","q3","q4","q5"),
