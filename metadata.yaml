@@ -5,34 +5,40 @@
 \margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 paper_title:  Ligand-specific regulation of a binary enhancer code dictating cellular senescence
-journal: Proc Natl Acad Sci U S A\
-publication_date: "2025-06-17"\
-doi: 10.1073/pnas.2506321122\
+\f0\fs24 \cf0 paper_title:  CILP2 is a potential biomarker for the prediction and therapeutic target of peritoneal metastases in colorectal cancer
+journal: Sci Rep.\
+publication_date: "2024-04-31"\
+doi: 10.1038/s41598-024-63366-4\
 series_accession: GSE146585\
-bioproject: PRJNA610861\
+bioproject: 38816545\
 domain: rna_seq\
 organism: Homo sapiens\
 experiment_type: RNA seq\
 platform: Illumina HiSeq 2500\
 ref_genome: Homo sapiens (human) genome assembly GRCh38 (hg38) \
 read_type: single_end\
-sample_count: 4\
-sra_runs_total: 4\
+sample_count: 7\
+sra_runs_total: 6\
 \
 samples:\
-  Young_1:\
-    condition: minus_dox\
-    sra_runs: [SRX7865899]\
-  Young_2:\
-    condition: plus_dox\
-    sra_runs: [SRX7865900]\
-  Senescent_1:\
-    condition: minus_dox\
-    sra_runs: [SRX7865901]\
-  Senescent_2:\
-    condition: plus_dox\
-    sra_runs: [SRX7865902]\
+  Colorectal_cancer_1:\
+    condition: primary colorectal cancer\
+    sra_runs: [SRX347887]\
+  Colorectal_cancer_2:\
+    condition: primary colorectal cancer\
+    sra_runs: [SRX347888]\
+  Normal_1:\
+    condition: normal-looking surrounding colonic epithelium\
+    sra_runs: [SRX347905]\
+  Normal_2:\
+    condition: normal-looking surrounding colonic epithelium\
+    sra_runs: [SRX347906]\
+  Metastatic_cancer_1:\
+    condition: normal-looking surrounding colonic epithelium\
+    sra_runs: [SRX347923]\
+  Metastatic_2:\
+    condition: normal-looking surrounding colonic epithelium\
+    sra_runs: [SRX347924]\
 \
 paths:\
   fastq: fastq/\
@@ -46,6 +52,6 @@ paths:\
 \
 workflow:\
   threads: 16\
-  aligner: STAR\
+  aligner: hisat\
   quantifier: normalizedcounts\
-notes: "Genome wide expression analysis of young vs senescent BJ fibroblasts"}
+notes: "Gene expression profiling study by RNA-seq in colorectal cancer"}
