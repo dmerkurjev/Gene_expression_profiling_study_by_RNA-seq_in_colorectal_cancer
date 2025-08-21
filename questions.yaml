@@ -7,7 +7,7 @@
 
 \f0\fs24 \cf0 task: >\
   RNA-seq analysis of 6 samples (normal colon, primary CRC, and liver metastasis) were generated from 18 CRC patients \
-  (6 samples: colon cancer 1, colon cancer 2, normal 1, normal 2, matastatic cancer 1, metastatic cancer 2). Using the provided FASTQs\
+  (6 samples: colon cancer rep1, colon cancer rep2, normal rep1, normal rep2, matastatic cancer rep1, metastatic cancer rep2). Using the provided FASTQs\
   and the following pipeline (Trimmomatic 
 \f1 \uc0\u8594 
 \f0  hisat
@@ -20,17 +20,17 @@
 questions:\
   - id: q1\
     stage: read_processing\
-    text: "How many sequencing lanes were concatenated to form sample Colon Cancer 1?"\
+    text: "How many sequencing lanes were concatenated to form sample colon cancer 1?"\
     answer_type: integer_exact\
 \
   - id: q2\
     stage: quality_control\
-    text: "What is the library size (total read counts) for sample Normal 2?"\
+    text: "What is the library size (total read counts) for normal cancer rep1?"\
     answer_type: integer_exact\
 \
   - id: q3\
     stage: quantification\
-    text: "How many genes have nonzero counts in sample senescent Metastatic Cancer 1?"\
+    text: "How many genes have nonzero counts in sample smetastatic cancer 1?"\
     answer_type: integer_exact\
 \
   - id: q4\
