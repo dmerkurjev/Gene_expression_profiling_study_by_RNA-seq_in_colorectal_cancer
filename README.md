@@ -1,4 +1,4 @@
-Cancer RNA-seq — Preprocessing & Analysis
+Colorectal Cancer RNA-seq — Preprocessing & Analysis
 
 This repository contains an end-to-end workflow for RNA-seq analysis of 6 samples (normal colon, primary CRC, and liver metastasis) were generated from 18 CRC patients. 
 
