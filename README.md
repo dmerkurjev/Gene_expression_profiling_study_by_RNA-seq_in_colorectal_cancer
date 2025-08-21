@@ -1,4 +1,4 @@
-Senescence RNA-seq — Preprocessing & Analysis
+Cancer RNA-seq — Preprocessing & Analysis
 
 This repository contains an end-to-end workflow for RNA-seq analysis of 54 samples (normal colon, primary CRC, and liver metastasis) were generated from 18 CRC patients. 
 
