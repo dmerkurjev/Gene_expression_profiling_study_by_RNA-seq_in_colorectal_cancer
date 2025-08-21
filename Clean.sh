@@ -14,37 +14,42 @@ cd "${PROJECT_DIR}/raw"
 
 
 # Group SRA run IDs by biological sample 
-youngminusd=(SRX7865899)   # SRX7865899
-youngplusd=(SRX7865900)   # SRX7865900
-senescentminusd=(SRX7865901)    # SRX7865901
-senescentplusd=(SRX7865902)    # SRX7865902
+colon_rep1=(SRX347887)   # SRX347887
+colon_rep2=(SRX347888)   # SRX347888
+normal_rep1=(SRX347905)    # SRX347905
+normal_rep2=(SRX347906)    # SRX347906
+metastatic_rep1=(SRX347923)    # SRX347923
+metastatic_rep2=(SRX347924)    # SRX347924
 
 # -------------------- Download & Convert --------------------
 
 # Download .sra files
-for r in "${youngminusd[@]}" "${youngplusd[@]}" "${senescentminusd[@]}" "${senescentplud[@]}"; do
+for r in "${colon_rep1[@]}" "${colon_rep1[@]}" "${normal_rep1[@]}" "${normal_rep1[@]}" "${metastatic_rep1[@]}" "${metastatic_rep2[@]}"; do
   prefetch "$r"
 done
 
 # Convert to gzipped FASTQ
-for r in "${youngminusd[@]}" "${youngplusd[@]}" "${senescentminusd[@]}" "${senescentplud[@]}"; do
+for r in "${colon_rep1[@]}" "${colon_rep1[@]}" "${normal_rep1[@]}" "${normal_rep1[@]}" "${metastatic_rep1[@]}" "${metastatic_rep2[@]}"; do
   fasterq-dump -e 16 -p -O . "$r"
   gzip -f "${r}.fastq"
 done
 
 # Concatenate per-sample FASTQs
-cat "${youngminusd[@]/%/.fastq.gz}"  > ym.fastq.gz
-cat "${youngplusd[@]/%/.fastq.gz}"  > yp.fastq.gz
-cat "${senescentminusd[@]/%/.fastq.gz}" > sm.fastq.gz
-cat "${senescentplusd[@]/%/.fastq.gz}" > sp.fastq.gz
+cat "${colon_rep1[@]/%/.fastq.gz}"  > colon1.fastq.gz
+cat "${colon_rep2[@]/%/.fastq.gz}"  > colon2.fastq.gz
+cat "${normal_rep1[@]/%/.fastq.gz}" > normal1.fastq.gz
+cat "${normal_rep2[@]/%/.fastq.gz}" > normal2.fastq.gz
+cat "${metastatic_rep1[@]/%/.fastq.gz}" > metastatic1.fastq.gz
+cat "${metastatic_rep1[@]/%/.fastq.gz}" > metastatic2.fastq.gz
+
 
 # Move to fastq/ folder
-mv y*.fastq.gz s*.fastq.gz ../fastq/
+mv colon*.fastq.gz normal*.fastq.gz metastatic*.fastq.gz ../fastq/
 
 # -------------------- QC --------------------
 
 cd ../fastq
-fastqc ym.fastq.gz yp.gz sm.fastq.gz sp.fastq.gz \
+fastqc ycolon*.fastq.gz normal*.fastq.gz metastatic*.fastq.gz \
   -o ../qc --threads 16
 
 # -------------------- Alignment (hisat) --------------------
@@ -56,7 +61,7 @@ cd hisat2_index
 tar -xzf hg38.tar.gz
 
 cd hisat2_index
-SAMPLES=(ym,yp,sm,sp)
+SAMPLES=(colon1,colon2,normal1,normal2,metastatic1,metastatic2)
 
 # Align each sample
 for sample in "${SAMPLES[@]}"
