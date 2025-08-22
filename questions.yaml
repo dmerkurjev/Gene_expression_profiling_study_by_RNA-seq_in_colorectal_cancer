@@ -30,7 +30,7 @@ questions:\
 \
   - id: q3\
     stage: quantification\
-    text: "How many genes have nonzero counts in sample smetastatic cancer 1?"\
+    text: "How many genes have nonzero counts in sample metastatic cancer 1?"\
     answer_type: integer_exact\
 \
   - id: q4\
