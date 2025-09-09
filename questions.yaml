@@ -41,4 +41,4 @@ questions:\
   - id: q5\
     stage: differential_expression\
     text: "Which gene is ranked 3th by log2 fold change (most upregulated) in normal1 vs. metastatic1?"\
-    answer_type: integer_exact\}
+    answer_type: string_exact\}
